@@ -1,15 +1,13 @@
-import ProfilePic from './assets/pfp.png'
-function Card(){
 
-    return(
+
+function Card({ profilePic, name, description }) {
+    return (
         <div className='card'>
-            <img className='card-image' src= {ProfilePic} alt="profile picture"></img>
-            <h2 classname='card-title'>Kyle Beck </h2>
-            <p> I am making my website</p>
-
-
+            <img className='card-image' src={profilePic} alt="profile picture"></img>
+            <h2 className='card-title'>{name}</h2>
+            <p>{description}</p>
         </div>
     );
 }
 
-export default Card
+export default Card;
