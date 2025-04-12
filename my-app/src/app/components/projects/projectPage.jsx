@@ -1,23 +1,17 @@
 import React from "react";
 import ProjectCard from "./projectCard";
 import { projectData } from "./project.data";
-import { Flex } from "@radix-ui/themes";
-
+import { Container, Flex } from "@radix-ui/themes";
 
 const ProjectsPage = () => {
- 
-
   return (
-    <>
-      <div >
+    <Container size="2" px="4" py="6">
+      <Flex direction="column" gap="4">
         {projectData.map((project) => (
-        <ProjectCard key={project.title} {...project} />
+          <ProjectCard key={project.title} {...project} />
         ))}
-
-      </div>
-
-        
-    </>
+      </Flex>
+    </Container>
   );
 };
 
