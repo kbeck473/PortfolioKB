@@ -5,22 +5,12 @@ import ProjectPage from "./components/projects/ProjectPage";
 export default function Home() {
   return (
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-          <Container size = "2">
 
           <Flex direction="column">
                 <Heading>My Portfolio</Heading>
                 <Text color="gray">Welcome to my portfolio! Here you will find my projects and skills.</Text>
                 <ProjectPage/>
            </Flex>
-
-
-            
-
-
-            
-
-
-          </Container>
 
      </main>
   );

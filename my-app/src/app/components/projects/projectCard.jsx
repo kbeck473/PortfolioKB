@@ -1,43 +1,58 @@
 import React from "react";
 import { Card, Flex, Heading, Text } from "@radix-ui/themes";
+import { Icon } from "@iconify/react";
 
 const ProjectCard = ({ title, description, imageSrc, technologies }) => {
   return (
-    <Card size="3" style={{ maxWidth: 400 }}>
+    <Card style={{ minWidth: "100%", marginBottom: "10px" }} size="4">
       <Flex direction="column" gap="4">
         {/* Project Image */}
         <img
-            src={imageSrc}
-            alt={`${title} preview`}
-            referrerPolicy="no-referrer"
-            crossOrigin="anonymous"
-            style={{
-              width: "100%",
-              height: "200px",
-              objectFit: "cover",
-              borderRadius: "var(--radius-2)",
-            }}
-          />
-
+          src={imageSrc}
+          alt={`${title} preview`}
+          referrerPolicy="no-referrer"
+          crossOrigin="anonymous"
+          style={{
+            width: "100%",
+            height: "400px",
+            objectFit: "cover",
+            borderRadius: "var(--radius-2)",
+          }}
+        />
 
         {/* Title */}
-        <Heading size="4">{title}</Heading>
+        <Heading size="2">{title}</Heading>
 
         {/* Description */}
         <Text color="gray">{description}</Text>
 
-        {/* Technologies */}
+        {/* Technologies/Github */}
         <Flex direction="column" gap="1">
           <Text color="gray">Technologies used:</Text>
-          <Flex gap="2" wrap="wrap" align="center">
-            {technologies.map((tech) => (
-              <img
-                key={tech.name}
-                src={tech.iconSrc}
-                alt={tech.name}
-                title={tech.name}
-                style={{ width: 24, height: 24 }}
-              />
+          {/* 
+            1) direction="row" for horizontal layout
+            2) align="end" to anchor each item along the bottom
+            3) gap="3" for spacing between technologies
+            4) wrap="wrap" in case they overflow the container width
+          */}
+          <Flex direction="row" align="end" gap="3" wrap="wrap">
+            {technologies.map((tech, index) => (
+              <Flex
+                key={tech.id || `${tech.iconSrc}-${index}`}
+                direction="column"
+                align="center"
+                gap="1"
+              >
+                <Icon
+                  icon={tech.iconSrc}
+                  style={{
+                    fontSize: 50 * (tech.sizeMultiplier || 1) + "px",
+                  }}
+                />
+                <Text size="2" as="span">
+                  {tech.name}
+                </Text>
+              </Flex>
             ))}
           </Flex>
         </Flex>
