@@ -1,8 +1,8 @@
 // app/page.tsx or pages/index.tsx
 
 import Header from "./components/Header";
-import ProjectPage from "./components/projects/ProjectPage";
-import Greeting from "./components/Greeting";
+import ProjectPage from "./components/projects/projectPage";
+import Greeting from "./components/greeting";
 import "./globals.css";
 
 export default function Home() {
