@@ -9,7 +9,7 @@ const ProjectCard = ({ title, description, imageSrc, technologies, githubUrl }) 
         width: "100%",
         maxWidth: "700px",
         marginBottom: "10px",
-        minHeight: "500px",
+        minHeight: "700px",
         marginLeft: "auto",
         marginRight: "auto",
       }}
