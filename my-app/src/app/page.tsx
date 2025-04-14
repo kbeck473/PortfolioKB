@@ -1,28 +1,23 @@
 // app/page.tsx or pages/index.tsx
 
-import { Container, Flex, Heading, Text } from "@radix-ui/themes";
-import Header from "./components/Header"; // Adjust path if needed
-import ProjectPage from "./components/projects/ProjectPage"; // Make sure path is correct
+import Header from "./components/Header";
+import ProjectPage from "./components/projects/ProjectPage";
+import "./globals.css";
 
 export default function Home() {
   return (
     <>
       <Header />
-
-
-
-      <Container size="4" className="py-10">
-        <Flex direction="column" gap="6">
-          <Heading size="8">My Portfolio</Heading>
-          <Text size="4" color="gray">
+      {/* Adding mt-8 adds margin-top between the header and the portfolio section */}
+      <main className="container mx-auto mt-8 py-10 text-center">
+        <div className="flex flex-col gap-6">
+          <h1 className="text-4xl font-bold">My Portfolio</h1>
+          <p className="text-lg text-gray-600">
             Welcome to my portfolio! Here you will find my projects and skills.
-          </Text>
+          </p>
           <ProjectPage />
-        </Flex>
-      </Container>
-
-
-
+        </div>
+      </main>
     </>
   );
 }
