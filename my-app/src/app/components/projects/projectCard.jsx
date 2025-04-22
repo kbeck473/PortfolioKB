@@ -7,9 +7,9 @@ const ProjectCard = ({ title, description, imageSrc, technologies, githubUrl }) 
     <Card
       style={{
         width: "100%",
-        maxWidth: "700px",
+        maxWidth: "800px",
         marginBottom: "10px",
-        minHeight: "700px",
+        minHeight: "800px",
         marginLeft: "auto",
         marginRight: "auto",
       }}

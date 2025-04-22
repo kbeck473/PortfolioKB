@@ -47,7 +47,7 @@ export const projectData = [
   {
     title: "CSUSM Fitness - Membership Management System",
     description:
-      "A Java-based desktop application designed to manage user memberships for fitness facilities. It allows administrators to check users in/out, view member status, manage personal information, and monitor live occupancy. The system uses a MySQL database for persistent storage and is structured with a modular front-end/back-end separation using Java Swing for the UI.",
+      "A Java-based desktop application designed to manage user memberships for fitness facilities. It allows administrators to check users in/out, view member status, manage personal information, and monitor live occupancy. Go to the GitHub to learn more. ",
     imageSrc: "/images/csusmfitness.png", 
     githubUrl: "https://github.com/kbeck473/CSUSMFitness",
     technologies: [
