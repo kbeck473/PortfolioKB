@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import ProjectPage from "./components/projects/projectPage";
 import Greeting from "./components/greeting";
 import "./globals.css";
-import { Grid } from "@radix-ui/themes";
+
 import ExperiencesPage from "./components/experience/ExperiencesPage"
 
 export default function Home() {
