@@ -4,11 +4,11 @@ export default function Greeting() {
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        {/* use the file link you uploaded here */}
         <img
-          src="/mnt/data/5437f504-1a42-49de-931b-862907d65a84.png"
-          alt="Spiderman"
-          className="max-w-sm rounded-lg shadow-2xl"
+          src="/images/kylepfp.jpg"
+          alt="KylePFP"
+          // bumped up to max-w-lg (512px)
+          className="w-full max-w-lg rounded-lg shadow-2xl"
         />
 
         <div>
