@@ -19,7 +19,6 @@ const ExperiencesPage = () => (
       Below is a summary of my professional roles, highlighting the skills and impact I've delivered.
     </Text>
 
-    {/* Two-column grid — note the quotes around "1" and "2" */}
     <Grid columns={{ initial: "1", md: "2" }} gap="4">
       {experienceData.map((exp) => (
         <Box key={exp.title}>

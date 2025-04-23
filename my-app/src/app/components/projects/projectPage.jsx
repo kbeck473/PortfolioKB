@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./projectCard";
 import { projectData } from "./project.data";
 import { Container, Grid, Box, Heading, Text } from "@radix-ui/themes";
 
