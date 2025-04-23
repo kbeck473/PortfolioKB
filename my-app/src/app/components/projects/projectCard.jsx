@@ -2,18 +2,22 @@ import React from "react";
 import { Card, Flex, Text, Heading, Button } from "@radix-ui/themes";
 import { Icon } from "@iconify/react";
 
-const ProjectCard = ({ title, description, imageSrc, technologies, githubUrl }) => {
+const ProjectCard = ({
+  title,
+  description,
+  imageSrc,
+  technologies,
+  githubUrl
+}) => {
   return (
     <Card
+      size="4"
       style={{
         width: "100%",
-        maxWidth: "800px",
-        marginBottom: "10px",
-        minHeight: "800px",
-        marginLeft: "auto",
-        marginRight: "auto",
+        maxWidth: "800px",         // match experience cards
+        margin: "0 auto 1rem",     // centered + 1rem bottom
+        padding: "1.5rem"          // same padding as experiences
       }}
-      size="4"
     >
       <Flex direction="column" gap="4">
         {/* Image */}
@@ -27,7 +31,7 @@ const ProjectCard = ({ title, description, imageSrc, technologies, githubUrl }) 
               width: "100%",
               height: "100%",
               objectFit: "contain",
-              borderRadius: "var(--radius-2)",
+              borderRadius: "var(--radius-2)"
             }}
           />
         </div>
@@ -42,9 +46,9 @@ const ProjectCard = ({ title, description, imageSrc, technologies, githubUrl }) 
           <Flex direction="column" gap="1">
             <Text color="gray">Technologies used:</Text>
             <Flex direction="row" align="end" gap="3" wrap="wrap">
-              {technologies.map((tech, index) => (
+              {technologies.map((tech, idx) => (
                 <Flex
-                  key={tech.id || `${tech.iconSrc}-${index}`}
+                  key={tech.id ?? `${tech.iconSrc}-${idx}`}
                   direction="column"
                   align="center"
                   gap="1"
@@ -53,7 +57,7 @@ const ProjectCard = ({ title, description, imageSrc, technologies, githubUrl }) 
                     icon={tech.iconSrc}
                     style={{
                       fontSize: `${50 * (tech.sizeMultiplier || 1)}px`,
-                      color: tech.name === "Snapdragon" ? "#f00" : undefined,
+                      color: tech.name === "Snapdragon" ? "#f00" : undefined
                     }}
                   />
                   <Text size="2" as="span">
@@ -64,15 +68,15 @@ const ProjectCard = ({ title, description, imageSrc, technologies, githubUrl }) 
             </Flex>
           </Flex>
 
-          {/* GitHub Button (conditionally shown) */}
+          {/* GitHub Button */}
           {githubUrl && (
             <Button asChild size="3" variant="outline">
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              <Flex align="center" gap="2">
-                <Icon icon="mdi:github" width={18} height={18} />
-                <span>View Code</span>
-              </Flex>
-            </a>
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                <Flex align="center" gap="2">
+                  <Icon icon="mdi:github" width={18} height={18} />
+                  <span>View Code</span>
+                </Flex>
+              </a>
             </Button>
           )}
         </Flex>

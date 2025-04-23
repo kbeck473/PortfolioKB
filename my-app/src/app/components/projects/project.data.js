@@ -32,7 +32,7 @@ export const projectData = [
   {
     title: "3D Printed Home Server Rack",
     description:
-      "A 3D printed 10\" server rack housing a home lab with a ProDesk 600 G2, Raspberry Pi 5, pfSense firewall, and a managed Netgear switch. Includes custom 3D printed brackets and mounts for compact hardware and airflow optimization. The rack supports virtualization (Proxmox),and local network services.",
+      "A 3D printed 10\" server rack housing a home lab with a ProDesk 600 G2, Raspberry Pi 5, pfSense firewall, and a managed Netgear switch. Includes 3D printed brackets and mounts for compact hardware. The rack supports virtualization (Proxmox),and local network services.",
     imageSrc: "/images/serverrack.png",
     // ❌ No GitHub link — the button will not render for this project
     technologies: [
