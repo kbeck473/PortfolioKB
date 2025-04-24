@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "@iconify/react";
 
 export default function Greeting() {
   return (
@@ -7,7 +8,6 @@ export default function Greeting() {
         <img
           src="/images/kylepfp.jpg"
           alt="KylePFP"
-          // bumped up to max-w-lg (512px)
           className="w-full max-w-lg rounded-lg shadow-2xl"
         />
 
@@ -17,7 +17,14 @@ export default function Greeting() {
             I am Kyle Beck, a developer with an education in Software Engineering
             and a professional background in IT. Welcome to my portfolio!
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <a
+            href="/Kyle_Beck_IT 4_23_25.pdf"
+            download
+            className="btn btn-primary "
+          >
+            <Icon icon="mdi:download" className="w-5 h-5 mr-2" />
+            Download CV
+          </a>
         </div>
       </div>
     </div>
