@@ -1,6 +1,2 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@plugin "daisyui";
+/* globals.css */
 @import "tailwindcss";
-@plugin "daisyui"{themes: dark --default};
