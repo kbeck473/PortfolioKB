@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 export default function Greeting() {
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 h-[50vh]">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src="/images/kylepfp.jpg"
@@ -12,7 +12,7 @@ export default function Greeting() {
         />
 
         <div>
-          <h1 className="text-5xl font-bold">Hello there!</h1>
+          <h1 className="text-5xl font-bold">Software Engineer & IT Problem-Solver!</h1>
           <p className="py-6">
             I am Kyle Beck, a developer with an education in Software Engineering
             and a professional background in IT. Welcome to my portfolio!
