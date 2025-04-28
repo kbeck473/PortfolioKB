@@ -4,25 +4,27 @@ import ExperienceCard from "./ExperienceCard";
 import { experienceData } from "./experience.data";
 
 const ExperiencesPage = () => (
-   
-  <Container
-    size="4"
-    style={{ margin: "0 auto", padding: "2rem 1rem" }}
-  >
+  <Container size="4" style={{ margin: "0 auto", padding: "2rem 1rem" }}>
     {/* Section title */}
-    <Heading size="7" as="h2" style={{ marginBottom: "0.5rem" }}>
+    <Heading size="7" as="h2">
       Professional Experience
     </Heading>
 
     {/* Short description */}
-    <Text size="2" color="gray" style={{ marginBottom: "1.5rem" }}>
+    <Text size="2" color="gray">
       Below is a summary of my professional roles, highlighting the skills and impact I've delivered.
     </Text>
 
-    <Grid columns={{ initial: "1", md: "2" }} gap="4"> 
+    {/* Two-col grid with uniform row heights */}
+    <Grid
+      columns={{ initial: "1", md: "2" }}
+      gap="4"
+      className="mt-5"
+      css={{ gridAutoRows: "1fr" }}
+    >
       {experienceData.map((exp) => (
-        <Box key={exp.title}>
-          <ExperienceCard {...exp} />
+        <Box key={exp.title} css={{ height: "100%" }}>
+          <ExperienceCard className="h-full flex flex-col" {...exp} />
         </Box>
       ))}
     </Grid>

@@ -7,16 +7,18 @@ const ProjectCard = ({
   description,
   imageSrc,
   technologies,
-  githubUrl
+  githubUrl,
+  className
 }) => {
   return (
     <Card
       size="4"
+      className={`h-full flex flex-col ${className || ""}`}
       style={{
         width: "100%",
-        maxWidth: "800px",         // match experience cards
-        margin: "0 auto 1rem",     // centered + 1rem bottom
-        padding: "1.5rem"          // same padding as experiences
+        maxWidth: "800px",      // match experience cards
+        margin: "0 auto 1rem",  // centered + 1rem bottom
+        padding: "1.5rem"       // same padding as experiences
       }}
     >
       <Flex direction="column" gap="4">
@@ -56,7 +58,7 @@ const ProjectCard = ({
                   <Icon
                     icon={tech.iconSrc}
                     style={{
-                      fontSize: `${50 * (tech.sizeMultiplier || 1)}px`,
+                      fontSize: `${50 * (tech.sizeMultiplier || 1)}px`, 
                       color: tech.name === "Snapdragon" ? "#f00" : undefined
                     }}
                   />

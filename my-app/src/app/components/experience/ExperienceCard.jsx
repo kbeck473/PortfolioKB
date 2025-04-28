@@ -6,12 +6,14 @@ const ExperienceCard = ({
   title,
   company,
   duration,
-  description, // now an array
+  description,
   icon,
-  link
+  link,
+  className
 }) => (
   <Card
     size="4"
+    className={`h-full flex flex-col ${className || ""}`}
     style={{
       width: "100%",
       maxWidth: "800px",
@@ -28,9 +30,7 @@ const ExperienceCard = ({
 
       {/* Company & Duration */}
       <Text as="strong">{company}</Text>
-      <Text color="gray" size="2">
-        {duration}
-      </Text>
+      <Text color="gray" size="2">{duration}</Text>
 
       {/* Bullet list of descriptions */}
       <ul style={{ marginTop: "1rem", paddingLeft: "1.25rem" }}>
