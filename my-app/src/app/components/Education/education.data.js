@@ -7,8 +7,15 @@ export const educationData = [
       highlights: [
         "Extensive training in Software Architecture, Algorithms, and Human-Computer Interaction.",
         "Hands-on experience developing web and mobile applications with React, Node.js, and Python.",
-        "Capstone project integrating AR technologies with machine learning."
-      ],
+        "Worked with Qualcomm as a student developer to deliver AR experiences powered by AI.",
+        "Developed projects following Agile methodologies, including Scrum-based sprint planning and stand-ups.",
+        "Applied full Software Development Life Cycle (SDLC) practices from requirements gathering to deployment.",
+        "Created technical documentation including requirements specifications, design documents, and user manuals.",
+        "Designed system architectures and workflows using UML diagrams such as use case, sequence, and class diagrams.",
+        "Implemented unit, integration, and system testing strategies to ensure code quality and reliability.",
+        "Practiced version control and collaborative workflows with Git, GitHub, and code review processes."
+      ]
+      
     },
   ];
   

@@ -18,7 +18,7 @@ const ExperienceCard = ({
       width: "100%",
       maxWidth: "800px",
       margin: "0 auto 1rem",
-      padding: "1.5rem"
+      padding: "1.5rem",
     }}
   >
     <Flex direction="column" gap="3">
@@ -33,10 +33,19 @@ const ExperienceCard = ({
       <Text color="gray" size="2">{duration}</Text>
 
       {/* Bullet list of descriptions */}
-      <ul style={{ marginTop: "1rem", paddingLeft: "1.25rem" }}>
+      <ul
+        style={{
+          marginTop: "1rem",
+          paddingLeft: "1.5rem",
+          listStyleType: "disc",       // ✅ Show bullets
+          listStylePosition: "outside", // ✅ Proper spacing
+          color: "var(--gray-a11)",     // ✅ Match gray color
+          fontSize: "0.95rem",
+        }}
+      >
         {description.map((point, idx) => (
           <li key={idx} style={{ marginBottom: "0.5rem" }}>
-            <Text>{point}</Text>
+            <Text as="span">{point}</Text>
           </li>
         ))}
       </ul>

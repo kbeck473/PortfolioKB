@@ -8,7 +8,7 @@ const EducationCard = ({
   duration,
   highlights,
   imageSrc,
-  className
+  className,
 }) => {
   return (
     <Card
@@ -24,7 +24,14 @@ const EducationCard = ({
       <Flex direction="column" gap="4">
         {/* Image */}
         {imageSrc && (
-          <div style={{ aspectRatio: "2.13 / 1", width: "100%", overflow: "hidden", borderRadius: "var(--radius-2)" }}>
+          <div
+            style={{
+              aspectRatio: "2.13 / 1",
+              width: "100%",
+              overflow: "hidden",
+              borderRadius: "var(--radius-2)",
+            }}
+          >
             <img
               src={imageSrc}
               alt={`${institution} preview`}
@@ -41,12 +48,22 @@ const EducationCard = ({
 
         {/* Institution & Degree */}
         <Heading size="5">{institution}</Heading>
-        <Text color="gray">{degree} • {duration}</Text>
+        <Text color="gray">
+          {degree} • {duration}
+        </Text>
 
         {/* Highlights */}
         <Flex direction="column" gap="2">
           <Text color="gray">Program Highlights:</Text>
-          <ul style={{ paddingLeft: "1rem", color: "var(--gray-a11)", fontSize: "0.9rem" }}>
+          <ul
+            style={{
+              listStyleType: "disc",       // show real bullets
+              listStylePosition: "outside", // proper bullet spacing
+              paddingLeft: "1.5rem",        // better indent
+              color: "var(--gray-a11)",
+              fontSize: "0.9rem",
+            }}
+          >
             {highlights.map((highlight, idx) => (
               <li key={idx} style={{ marginBottom: "0.5rem" }}>
                 {highlight}
