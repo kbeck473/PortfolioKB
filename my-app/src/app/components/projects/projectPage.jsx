@@ -1,7 +1,7 @@
 // ProjectsPage.jsx
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { projectData } from "./project.data";
+import { projectData } from "./Project.Data";
 import { Container, Grid, Box, Heading, Text } from "@radix-ui/themes";
 
 const ProjectsPage = () => (
