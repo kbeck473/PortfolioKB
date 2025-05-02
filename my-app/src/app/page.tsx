@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+
 import Nav from "./components/Navbar";
 import Greeting from "./components/greeting";
 import Footer from "./components/Footer"
