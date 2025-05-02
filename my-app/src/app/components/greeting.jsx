@@ -64,7 +64,7 @@ export default function Greeting() {
           </p>
 
           <a
-            href="/Kyle_Beck_IT 4_23_25.pdf"
+            href="/Kyle_Beck_IT 5_2_25.pdf"
             download
             className="btn btn-primary"
           >
