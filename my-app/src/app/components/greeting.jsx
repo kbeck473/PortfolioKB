@@ -1,16 +1,15 @@
+'use client';
+
 import React from "react";
 import { Icon } from "@iconify/react";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Greeting() {
   return (
     <div
       className="
         hero bg-base-200
-
-        /* always grow to fit on small/medium */
         h-auto
-
-        /* only cap on large+ screens */
         lg:max-h-[50vh]
         lg:overflow-hidden
       "
@@ -22,13 +21,8 @@ export default function Greeting() {
           className="
             w-full 
             max-w-lg 
-
-            /* fluid height */
             h-auto 
-
-            /* cap image on large screens */
             lg:max-h-[45vh] 
-
             object-contain 
             rounded-lg 
             shadow-2xl
@@ -36,8 +30,32 @@ export default function Greeting() {
         />
 
         <div className="space-y-4 lg:pl-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            Software Engineer & IT Problem-Solver!
+                  <h1
+            className="text-3xl md:text-4xl lg:text-5xl font-bold"
+            style={{ minHeight: "3.5rem", minWidth: "24ch" }}
+          >
+            <TypeAnimation
+              sequence={[
+                "Software Engineer 🔧",
+                10000,
+                "Cloud Enthusiast ☁️",
+                10000,
+                "IT Professional 💼",
+                10000,
+                "Tech Explorer 🧭",
+                10000,
+                "Code Craftsman 💻",
+                10000,
+                "Problem Solver 🧠",
+                10000,
+                "Powerlifter 🏋️‍♂️",
+                10000,
+              ]}
+              wrapper="span"
+              cursor={true}
+              repeat={Infinity}
+              style={{ display: "inline-block" }}
+            />
           </h1>
 
           <p className="max-w-md">

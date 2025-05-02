@@ -11,19 +11,19 @@ const HomeTabs = () => {
       <Tabs.List>
         <div className="flex justify-center gap-6 w-full">
           <Tabs.Trigger
-            className="px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-500 data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-blue-600"
+            className="px-4 py-2 text-xl font-medium text-gray-600 hover:text-blue-500 data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-blue-600"
             value="education"
           >
             Education
           </Tabs.Trigger>
           <Tabs.Trigger
-            className="px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-500 data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-blue-600"
+            className="px-4 py-2 text-xl font-medium text-gray-700 hover:text-blue-500 data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-blue-600"
             value="experience"
           >
             Experience
           </Tabs.Trigger>
           <Tabs.Trigger
-            className="px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-500 data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-blue-600"
+            className="px-4 py-2 text-xl font-medium text-gray-700 hover:text-blue-500 data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-blue-600"
             value="projects"
           >
             Projects
