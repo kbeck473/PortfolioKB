@@ -1,6 +1,5 @@
 
 import Nav from "./components/Navbar";
-import Greeting from "./components/greeting";
 import Footer from "./components/Footer"
 import HomeTabs from "./components/HomeTabs";  // import the new tab component
 
