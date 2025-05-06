@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <Greeting />
       <main className="max-w-7xl mx-auto px-6 mt-8 py-10 text-center">
         <HomeTabs />
       </main>
