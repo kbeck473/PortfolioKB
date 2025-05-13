@@ -1,13 +1,20 @@
 // tailwind.config.js
 module.exports = {
-    content: [
-      "./src/**/*.{js,ts,jsx,tsx}", // Include all files in the src folder
-      "./components/**/*.{js,ts,jsx,tsx}",
-      "./my-app/**/*.{js,ts,jsx,tsx}"
-    ],
-    theme: {
-      extend: {},
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/app/globals.css",      // ← ensures @apply in globals.css works
+  ],
+  theme: {
+    extend: {
+      colors: {
+        brand:       "var(--brand)",
+        "brand-hover":"var(--brand-hover)",
+      },
     },
-    plugins: [require("daisyui")],
-  };
-
+  },
+  plugins: [
+    // remove DaisyUI if you’re no longer using it
+    // require("daisyui"),
+  ],
+};

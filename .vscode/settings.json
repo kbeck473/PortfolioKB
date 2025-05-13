@@ -1,0 +1,11 @@
+// .vscode/settings.json
+{
+  // Tell the Tailwind extension to treat .css files as Tailwind-enabled
+  "tailwindCSS.includeLanguages": {
+    "css": "tailwindcss"
+  },
+  // (Optional) allow completions inside strings, template literals, etc.
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}

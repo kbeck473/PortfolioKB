@@ -1,6 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@plugin "daisyui";
-@import "tailwindcss";
-@plugin "daisyui"{themes: dark --default};
+/* src/app/globals.css */
+@import "tailwindcss";   /* v4 bundles base, components & utilities */
+
+/* ── your global resets & design tokens ── */
+
+:root {
+  /* brand colors you can reference in CSS or via Tailwind custom colors */
+  --brand:       #ffffff;
+  --brand-hover: #1e3a8a;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* you can also @apply here if you prefer, once your config globs it */
+}
+
+body {
+  /* use pure CSS here instead of @apply */
+  background: white;
+  color: #1f2937; /* slate-900 */
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  /* global link styling without Tailwind at-rules */
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--brand-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
