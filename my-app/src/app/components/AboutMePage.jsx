@@ -1,59 +1,89 @@
 'use client';
 
 import React from 'react';
-import { Flex, Text, Heading, Box } from '@radix-ui/themes';
+import { Container, Card, Flex, Heading, Text, Box } from '@radix-ui/themes';
 import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 
-const AboutMePage = () => {
-  return (
-    <Box
-      className="w-full max-w-6xl mx-auto px-6 py-8"
-    >
-      <Flex direction="column" gap="4">
-        {/* Icon + Heading */}
-        <Flex align="center" gap="2">
-          <Icon icon="mdi:account-circle" width={24} height={24} />
-          <Heading size="5">About Me</Heading>
-        </Flex>
-
-        {/* Subtitle */}
-        <Text color="gray" size="2">
-          Kyle Beck • Software Engineer • CSUSM
-        </Text>
-
-        {/* Image + Text Layout */}
-        <Flex
-          direction={{ initial: 'column', md: 'row' }}
-          gap="5"
-          align="center"
-          justify="start"
-        >
-          {/* Image */}
-          <img
-            src="/images/kylepfp.jpg"
-            alt="Kyle Beck"
-            className="w-full max-w-xs md:max-w-sm rounded-2xl object-cover shadow-xl"
-          />
-
-          {/* Bio Text */}
-          <Flex direction="column" gap="3">
-            <Text size="3">
-              I'm a passionate software engineer with a strong foundation in IT
-              support, cloud infrastructure, and front-end development. I enjoy
-              building intuitive, efficient systems that solve real-world
-              problems.
-            </Text>
-            <Text size="3">
-              Currently, I serve as a Help Desk Coordinator at CSUSM and am
-              completing my B.S. in Software Engineering. Outside of work, I
-              dive into 3D printing, AR, and machine learning — blending
-              physical tools with digital creativity.
-            </Text>
-          </Flex>
-        </Flex>
-      </Flex>
-    </Box>
-  );
+const parent = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { when: 'beforeChildren', staggerChildren: 0.2 },
+  },
+};
+const child = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
 };
 
-export default AboutMePage;
+export default function AboutMePage() {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={parent}
+      className="w-full px-4"
+    >
+      <Container size="4" style={{ margin: '0 auto', padding: '2rem 1rem' }}>
+        <motion.div variants={child} className="mt-5 w-full">
+          <Card
+            size="4"
+            style={{
+              maxWidth: '1000px',
+              margin: '0 auto',
+              padding: 0,                        // remove all padding
+              borderRadius: 'var(--radius-2)',
+              overflow: 'hidden',               // clip to one radius
+              boxShadow: 'var(--shadow-2)',
+            }}
+          >
+            <Flex
+              direction={{ initial: 'column', md: 'row' }}
+              className="w-full"
+            >
+              {/* image flush to the card edge */}
+              <Box className="w-full md:w-1/3 h-64 md:h-auto">
+                <img
+                  src="/images/kylepfp.jpg"
+                  alt="Kyle Beck"
+                  className="w-full h-full object-cover"
+                />
+              </Box>
+
+              {/* text area with its own padding */}
+              <Box className="w-full md:w-2/3 p-6 md:p-8 flex flex-col gap-4">
+                <Flex align="center" gap="2">
+                  <Icon icon="mdi:account-circle" width={24} height={24} />
+                  <Heading size="6" as="h2">
+                    About Me
+                  </Heading>
+                  
+                </Flex>
+                <Flex>     
+                  
+                  <Text size="2" color="gray">
+                  Kyle Beck • Software Engineer • CSUSM
+                  </Text>
+                </Flex>
+
+           
+
+                <Text size="3">
+                  I'm a passionate software engineer with a strong foundation in IT support,
+                  cloud infrastructure, and front-end development. I enjoy building intuitive,
+                  efficient systems that solve real-world problems.
+                </Text>
+                <Text size="3">
+                  Currently, I serve as a Help Desk Coordinator at CSUSM and am completing my B.S.
+                  in Software Engineering. Outside of work, I dive into 3D printing, AR, and machine
+                  learning — blending physical tools with digital creativity.
+                </Text>
+              </Box>
+            </Flex>
+          </Card>
+        </motion.div>
+      </Container>
+    </motion.div>
+  );
+}

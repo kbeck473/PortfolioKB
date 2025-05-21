@@ -15,15 +15,28 @@ export default function HeroSection() {
       className="
         relative min-h-[70vh]
         flex items-center justify-center px-6
-        bg-[#f8f9fa] text-gray-900
+        text-white
         overflow-hidden
       "
     >
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+      >
+        <source src="/47712-451772931_small.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Foreground content */}
       <motion.div
         variants={container}
         initial="hidden"
         animate="visible"
-        className="max-w-6xl w-full flex flex-col-reverse lg:flex-row items-center gap-8"
+        className="relative z-10 max-w-6xl w-full flex flex-col-reverse lg:flex-row items-center gap-8"
       >
         {/* Profile Image */}
         <motion.div variants={item} className="flex-1">
