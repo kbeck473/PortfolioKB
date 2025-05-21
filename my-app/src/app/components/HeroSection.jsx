@@ -6,21 +6,19 @@ import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.3 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.3 } } };
+const item = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[70vh] bg-gradient-to-br from-indigo-900 to-purple-700 flex items-center justify-center px-6">
+    <section
+      className="
+        relative min-h-[70vh]
+        flex items-center justify-center px-6
+        bg-[#f8f9fa] text-gray-900
+        overflow-hidden
+      "
+    >
       <motion.div
         variants={container}
         initial="hidden"
@@ -41,7 +39,7 @@ export default function HeroSection() {
         {/* Text & CTA */}
         <motion.div
           variants={item}
-          className="flex-1 space-y-6 text-center lg:text-left text-white"
+          className="flex-1 space-y-6 text-center lg:text-left"
         >
           <motion.h1
             variants={item}
@@ -56,7 +54,7 @@ export default function HeroSection() {
                 'Powerlifter', 2000,
               ]}
               wrapper="span"
-              cursor={true}
+              cursor
               repeat={Infinity}
             />
           </motion.h1>
@@ -66,8 +64,7 @@ export default function HeroSection() {
             className="text-lg max-w-xl mx-auto lg:mx-0 opacity-90"
           >
             I’m Kyle Beck—a Software Engineering graduate and IT professional.
-            Welcome to my portfolio where I showcase AR/AI, full‐stack dev, and
-            more.
+            Welcome to my portfolio where I showcase AR/AI, full-stack dev, and more.
           </motion.p>
 
           <motion.div variants={item}>
@@ -77,7 +74,7 @@ export default function HeroSection() {
               className="
                 inline-flex items-center gap-2
                 px-6 py-3
-                bg-indigo-600 hover:bg-indigo-700
+                bg-blue-500 hover:bg-blue-600
                 text-white font-semibold
                 rounded-lg shadow-md
                 transition

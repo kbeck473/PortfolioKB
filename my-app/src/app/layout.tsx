@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
-import { Theme, } from "@radix-ui/themes";
-
+import { Theme } from "@radix-ui/themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,8 +19,6 @@ export const metadata: Metadata = {
   description: "Created by Kyle Beck",
 };
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,9 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-     <Theme appearance="dark" accentColor="blue" radius="large">
-      {children}
+      <body
+        className={`
+          ${geistSans.variable} ${geistMono.variable}
+          antialiased text-blue-600
+        `}
+      >
+        <Theme
+          appearance="light"
+          accentColor="blue"
+          grayColor="gray"
+          radius="large"
+        >
+          {children}
         </Theme>
       </body>
     </html>
