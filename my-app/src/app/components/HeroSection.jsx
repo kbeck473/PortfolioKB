@@ -50,10 +50,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Text & CTA */}
-        <motion.div
-          variants={item}
-          className="flex-1 space-y-6 text-center lg:text-left"
-        >
+        <motion.div variants={item} className="flex-1 space-y-6 text-center lg:text-left">
           <motion.h1
             variants={item}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
@@ -80,21 +77,23 @@ export default function HeroSection() {
             Welcome to my portfolio where I showcase AR/AI, full-stack dev, and more.
           </motion.p>
 
-          <motion.div variants={item}>
+          <motion.div variants={item} className="flex justify-center lg:justify-start gap-4">
             <a
-              href="/Kyle_Beck_IT_5_2_25.pdf"
-              download
-              className="
-                inline-flex items-center gap-2
-                px-6 py-3
-                bg-blue-500 hover:bg-blue-600
-                text-white font-semibold
-                rounded-lg shadow-md
-                transition
-              "
+              href="/Kyle_Beck_IT%205_2_25.pdf"
+              download="Kyle_Beck_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-500"
             >
               <Icon icon="mdi:download" className="w-5 h-5" />
-              Download CV
+              Download Resume
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-500"
+            >
+              <Icon icon="mdi:email" className="w-5 h-5" />
+              Contact Me
             </a>
           </motion.div>
         </motion.div>
