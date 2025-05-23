@@ -14,7 +14,7 @@ export default function HeroSection() {
     <section
       className="
         relative min-h-[70vh]
-        flex items-center justify-center px-6
+        flex items-center justify-center px-6 py-8
         text-white
         overflow-hidden
       "
@@ -71,7 +71,7 @@ export default function HeroSection() {
 
           <motion.p
             variants={item}
-            className="text-lg max-w-xl mx-auto lg:mx-0 opacity-90"
+            className="text-lg max-w-xl mx-auto lg:mx-0 text-black font-bold"
           >
             I’m Kyle Beck—a Software Engineering graduate and IT professional.
             Welcome to my portfolio where I showcase AR/AI, full-stack dev, and more.
