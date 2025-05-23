@@ -71,7 +71,7 @@ export default function HeroSection() {
 
           <motion.p
             variants={item}
-            className="text-lg max-w-xl mx-auto lg:mx-0 text-black font-bold"
+            className="text-lg max-w-xl mx-auto lg:mx-0 text-black"
           >
             I’m Kyle Beck—a Software Engineering graduate and IT professional.
             Welcome to my portfolio where I showcase AR/AI, full-stack dev, and more.
@@ -83,14 +83,14 @@ export default function HeroSection() {
               download="Kyle_Beck_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-500"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-300"
             >
               <Icon icon="mdi:download" className="w-5 h-5" />
               Download Resume
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-500"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-300"
             >
               <Icon icon="mdi:email" className="w-5 h-5" />
               Contact Me
