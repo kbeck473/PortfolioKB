@@ -1,3 +1,5 @@
+// src/components/ProjectCard.jsx
+
 import React from "react";
 import { Card, Flex, Text, Heading, Button } from "@radix-ui/themes";
 import { Icon } from "@iconify/react";
@@ -57,9 +59,15 @@ const ProjectCard = ({
                 >
                   <Icon
                     icon={tech.iconSrc}
+                    /* mobile-first: 32px; from sm (≥640px): 48px */
+                    className="w-8 h-8 sm:w-12 sm:h-12"
                     style={{
-                      fontSize: `${50 * (tech.sizeMultiplier || 1)}px`, 
-                      color: tech.name === "Snapdragon" ? "#f00" : undefined
+                      /* force Snapdragon red */
+                      color: tech.name.toLowerCase().includes("snapdragon")
+                        ? "#E2231A"
+                        : undefined,
+                      /* apply any sizeMultiplier */
+                      transform: `scale(${tech.sizeMultiplier || 1})`
                     }}
                   />
                   <Text size="2" as="span">
