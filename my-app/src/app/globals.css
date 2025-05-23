@@ -18,7 +18,6 @@ html {
 body {
   /* use pure CSS here instead of @apply */
   background: white;
-  color: #1f2937; /* slate-900 */
   -webkit-font-smoothing: antialiased;
 }
 

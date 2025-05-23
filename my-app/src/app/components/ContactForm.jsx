@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("idle");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,35 +14,35 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("loading");
-    setErrorMessage("");
+    setStatus('loading');
+    setErrorMessage('');
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
       const data = await res.json();
 
       if (res.ok && data.ok) {
-        setStatus("success");
-        setForm({ name: "", email: "", message: "" });
+        setStatus('success');
+        setForm({ name: '', email: '', message: '' });
       } else {
-        const msg = data.error || "Failed to send message";
-        console.error("Email error:", msg);
+        const msg = data.error || 'Failed to send message';
+        console.error('Email error:', msg);
         setErrorMessage(msg);
-        setStatus("error");
+        setStatus('error');
       }
     } catch (err) {
-      console.error("Network error:", err);
-      setErrorMessage(err.message || "Network error");
-      setStatus("error");
+      console.error('Network error:', err);
+      setErrorMessage(err.message || 'Network error');
+      setStatus('error');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 text-black">
       <input
         name="name"
         type="text"
@@ -50,7 +50,7 @@ export default function ContactForm() {
         required
         value={form.name}
         onChange={handleChange}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border rounded bg-white text-black placeholder-black"
       />
 
       <input
@@ -60,7 +60,7 @@ export default function ContactForm() {
         required
         value={form.email}
         onChange={handleChange}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border rounded bg-white text-black placeholder-black"
       />
 
       <textarea
@@ -70,21 +70,21 @@ export default function ContactForm() {
         rows={4}
         value={form.message}
         onChange={handleChange}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border rounded bg-white text-black placeholder-black"
       />
 
       <button
         type="submit"
-        disabled={status === "loading"}
+        disabled={status === 'loading'}
         className="w-full py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50"
       >
-        {status === "loading" ? "Sending…" : "Send Message"}
+        {status === 'loading' ? 'Sending…' : 'Send Message'}
       </button>
 
-      {status === "success" && (
+      {status === 'success' && (
         <p className="text-green-700">Thanks! I’ll get back to you soon.</p>
       )}
-      {status === "error" && (
+      {status === 'error' && (
         <p className="text-red-700">Oops! {errorMessage}</p>
       )}
     </form>

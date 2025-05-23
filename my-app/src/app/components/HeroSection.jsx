@@ -13,7 +13,10 @@ const item = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center px-6 py-8 text-white overflow-hidden">
+    <section
+      className="relative min-h-[70vh] flex items-center justify-center px-6 py-8 overflow-hidden"
+      style={{ color: 'var(--gray12)' }} // default text color: dark in light, white in dark
+    >
       {/* Background video */}
       <video
         autoPlay
@@ -23,7 +26,6 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
       >
         <source src="/47712-451772931_small.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
 
       {/* Foreground content */}
@@ -46,7 +48,11 @@ export default function HeroSection() {
 
         {/* Text & CTA */}
         <motion.div variants={item} className="flex-1 space-y-6 text-center lg:text-left">
-          <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+          <motion.h1
+            variants={item}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
+            style={{ color: 'var(--gray12)' }}
+          >
             <TypeAnimation
               sequence={[
                 'Software Engineer', 2000,
@@ -58,44 +64,52 @@ export default function HeroSection() {
               wrapper="span"
               cursor
               repeat={Infinity}
+              className="text-white"   // force animated text to stay white
             />
           </motion.h1>
 
-          <motion.p variants={item} className="text-lg max-w-xl mx-auto lg:mx-0 text-black font-bold">
+          <motion.p
+            variants={item}
+            className="text-lg max-w-xl mx-auto lg:mx-0 font-bold"
+            style={{ color: 'var(--gray11)' }} // medium gray in light, light gray in dark
+          >
             I’m Kyle Beck—a Software Engineering graduate and IT professional.
             Welcome to my portfolio where I showcase AR/AI, full-stack dev, and more.
           </motion.p>
 
           <motion.div variants={item} className="flex justify-center lg:justify-start gap-4">
-            {/* Download Resume Button */}
+            {/* Download Resume */}
             <a
-              href="/Kyle_Beck_IT%205_2_25.pdf"
-              download="Kyle_Beck_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-300"
+              href="/Kyle_Beck_Resume.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:bg-blue-400"
             >
               <Icon icon="mdi:download" className="w-5 h-5" />
               Download Resume
             </a>
 
-            {/* Contact Me Modal Trigger */}
+            {/* Contact Me Modal */}
             <Dialog.Root>
               <Dialog.Trigger asChild>
-                <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-300">
+                <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:bg-blue-400">
                   <Icon icon="mdi:email" className="w-5 h-5" />
                   Contact Me
                 </button>
               </Dialog.Trigger>
               <Dialog.Portal>
                 <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-                <Dialog.Content className="fixed top-1/2 left-1/2 w-full max-w-md p-6 bg-white rounded-lg shadow-lg -translate-x-1/2 -translate-y-1/2">
+                <Dialog.Content
+                  className="fixed top-1/2 left-1/2 w-full max-w-md p-6 bg-white rounded-lg shadow-lg -translate-x-1/2 -translate-y-1/2"
+                  style={{ color: 'var(--gray12)' }}
+                >
                   <Dialog.Title className="text-xl font-bold mb-4">
                     Send me a message
                   </Dialog.Title>
                   <ContactForm />
                   <Dialog.Close asChild>
-                    <button className="absolute top-3 right-3 text-gray-600 hover:text-gray-900">✕</button>
+                    <button className="absolute top-3 right-3 text-gray-600 hover:text-gray-900">
+                      ✕
+                    </button>
                   </Dialog.Close>
                 </Dialog.Content>
               </Dialog.Portal>

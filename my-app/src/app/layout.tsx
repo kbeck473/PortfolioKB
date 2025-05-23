@@ -1,8 +1,12 @@
+// app/layout.tsx
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
+
+import ThemeProviders from "./components/ThemeProviders.jsx";
+import { Theme, ThemePanel } from "@radix-ui/themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,25 +25,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable}
-          antialiased text-blue-600
+          h-full antialiased
         `}
       >
-        <Theme
-          appearance="light"
-          accentColor="blue"
-          grayColor="gray"
-          radius="large"
-        >
-          {children}
-        </Theme>
+        <ThemeProviders>
+          <Theme
+            appearance="light"      // initial Radix appearance
+            accentColor="blue"
+            grayColor="gray"
+            radius="large"
+          >
+            {children}
+            <ThemePanel />        {/* floating light/dark toggle */}
+          </Theme>
+        </ThemeProviders>
       </body>
     </html>
   );
