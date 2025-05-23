@@ -9,7 +9,7 @@ export const projectData = [
     technologies: [
       { name: "Unity", iconSrc: "mdi:unity" },
       { name: "csharp", iconSrc: "devicon:csharp" },
-      { name: "Snapdragon", iconSrc: "simple-icons:snapdragon", sizeMultiplier: 0.8 },
+      { name: "Snapdragon", iconSrc: "simple-icons:snapdragon", sizeMultiplier: 0.9 },
       { name: "Onnx", iconSrc: "simple-icons:onnx", sizeMultiplier: 0.8 },
       { name: "GCP", iconSrc: "material-icon-theme:gcp", sizeMultiplier: 1 },
     ],
