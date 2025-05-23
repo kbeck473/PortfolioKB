@@ -3,7 +3,7 @@ export const projectData = [
     title: "AR+AI CartOptics",
     description:
       "The AR Grocery Assistant is a Snapdragon Spaces-powered app built in Unity that uses YOLOv8 and Sentis to detect grocery items in real time through AR glasses. It overlays product information like price, nutrition, and allergens using GenAI, and lets users interact to add items to a persistent AR shopping cart. This creates a seamless, hands-free shopping experience that enhances decision-making and convenience.",
-    imageSrc: "/images/CartOptics2.jpg",
+    imageSrc: "/images/CartOptics.jpg",
     // ✅ GitHub link will trigger the "View Code" button in the UI
     githubUrl: "https://github.com/kbeck473/CartOptics",
     technologies: [
