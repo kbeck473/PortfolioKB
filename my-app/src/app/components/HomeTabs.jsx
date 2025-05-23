@@ -11,24 +11,32 @@ import ProjectsPage from './projects/ProjectPage';
 export default function HomeTabs() {
   return (
     <Tabs.Root defaultValue="experience" className="w-full">
-      <Tabs.List>
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 w-full px-4">
-          <Tabs.Trigger value="about">
+      <Tabs.List className="px-4">
+        {/*
+          • grid-cols-2 on mobile, grid-cols-4 on ≥640px  
+          • w-max + mx-auto centers the grid itself  
+          • justify-items-center centers each trigger in its cell  
+        */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 justify-items-center w-max mx-auto">
+          <Tabs.Trigger value="about" className="text-center">
             <Text size="4" weight="medium" className="text-sm sm:text-base">
               About Me
             </Text>
           </Tabs.Trigger>
-          <Tabs.Trigger value="education">
+
+          <Tabs.Trigger value="education" className="text-center">
             <Text size="4" weight="medium" className="text-sm sm:text-base">
               Education
             </Text>
           </Tabs.Trigger>
-          <Tabs.Trigger value="experience">
+
+          <Tabs.Trigger value="experience" className="text-center">
             <Text size="4" weight="medium" className="text-sm sm:text-base">
               Experience
             </Text>
           </Tabs.Trigger>
-          <Tabs.Trigger value="projects">
+
+          <Tabs.Trigger value="projects" className="text-center">
             <Text size="4" weight="medium" className="text-sm sm:text-base">
               Projects
             </Text>
