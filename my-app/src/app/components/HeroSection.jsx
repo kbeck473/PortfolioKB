@@ -1,24 +1,19 @@
 'use client';
 
 import React from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
+import ContactForm from './ContactForm';
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.3 } } };
 const item = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
 export default function HeroSection() {
   return (
-    <section
-      className="
-        relative min-h-[70vh]
-        flex items-center justify-center px-6 py-8
-        text-white
-        overflow-hidden
-      "
-    >
+    <section className="relative min-h-[70vh] flex items-center justify-center px-6 py-8 text-white overflow-hidden">
       {/* Background video */}
       <video
         autoPlay
@@ -51,10 +46,7 @@ export default function HeroSection() {
 
         {/* Text & CTA */}
         <motion.div variants={item} className="flex-1 space-y-6 text-center lg:text-left">
-          <motion.h1
-            variants={item}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
-          >
+          <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
             <TypeAnimation
               sequence={[
                 'Software Engineer', 2000,
@@ -69,15 +61,13 @@ export default function HeroSection() {
             />
           </motion.h1>
 
-          <motion.p
-            variants={item}
-            className="text-lg max-w-xl mx-auto lg:mx-0 text-black"
-          >
+          <motion.p variants={item} className="text-lg max-w-xl mx-auto lg:mx-0 text-black font-bold">
             I’m Kyle Beck—a Software Engineering graduate and IT professional.
             Welcome to my portfolio where I showcase AR/AI, full-stack dev, and more.
           </motion.p>
 
           <motion.div variants={item} className="flex justify-center lg:justify-start gap-4">
+            {/* Download Resume Button */}
             <a
               href="/Kyle_Beck_IT%205_2_25.pdf"
               download="Kyle_Beck_Resume.pdf"
@@ -88,13 +78,28 @@ export default function HeroSection() {
               <Icon icon="mdi:download" className="w-5 h-5" />
               Download Resume
             </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-300"
-            >
-              <Icon icon="mdi:email" className="w-5 h-5" />
-              Contact Me
-            </a>
+
+            {/* Contact Me Modal Trigger */}
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:text-white hover:bg-blue-300">
+                  <Icon icon="mdi:email" className="w-5 h-5" />
+                  Contact Me
+                </button>
+              </Dialog.Trigger>
+              <Dialog.Portal>
+                <Dialog.Overlay className="fixed inset-0 bg-black/50" />
+                <Dialog.Content className="fixed top-1/2 left-1/2 w-full max-w-md p-6 bg-white rounded-lg shadow-lg -translate-x-1/2 -translate-y-1/2">
+                  <Dialog.Title className="text-xl font-bold mb-4">
+                    Send me a message
+                  </Dialog.Title>
+                  <ContactForm />
+                  <Dialog.Close asChild>
+                    <button className="absolute top-3 right-3 text-gray-600 hover:text-gray-900">✕</button>
+                  </Dialog.Close>
+                </Dialog.Content>
+              </Dialog.Portal>
+            </Dialog.Root>
           </motion.div>
         </motion.div>
       </motion.div>

@@ -1,33 +1,35 @@
-import * as React from "react";
-import { Tabs, Text } from "@radix-ui/themes";
+'use client';
 
-import AboutMePage from "./AboutMePage";
-import EducationsPage from "./Education/EducationPage";
-import ExperiencesPage from "./experience/ExperiencesPage";
-import ProjectsPage from "./projects/ProjectPage";
+import React from 'react';
+import { Tabs, Text } from '@radix-ui/themes';
 
-const HomeTabs = () => {
+import AboutMePage from './AboutMePage';
+import EducationsPage from './Education/EducationPage';
+import ExperiencesPage from './experience/ExperiencesPage';
+import ProjectsPage from './projects/ProjectPage';
+
+export default function HomeTabs() {
   return (
     <Tabs.Root defaultValue="experience" className="w-full">
-      <Tabs.List>
-        <div className="flex justify-center gap-6 w-full">
-          <Tabs.Trigger value="about">
-            <Text size="4" weight="medium">
+      <Tabs.List className="overflow-x-auto">
+        <div className="flex justify-center gap-3 sm:gap-6 min-w-max w-full px-4">
+          <Tabs.Trigger value="about" className="flex-shrink-0">
+            <Text size="4" weight="medium" className="text-sm sm:text-base">
               About Me
             </Text>
           </Tabs.Trigger>
-          <Tabs.Trigger value="education">
-            <Text size="4" weight="medium">
+          <Tabs.Trigger value="education" className="flex-shrink-0">
+            <Text size="4" weight="medium" className="text-sm sm:text-base">
               Education
             </Text>
           </Tabs.Trigger>
-          <Tabs.Trigger value="experience">
-            <Text size="4" weight="medium">
+          <Tabs.Trigger value="experience" className="flex-shrink-0">
+            <Text size="4" weight="medium" className="text-sm sm:text-base">
               Experience
             </Text>
           </Tabs.Trigger>
-          <Tabs.Trigger value="projects">
-            <Text size="4" weight="medium">
+          <Tabs.Trigger value="projects" className="flex-shrink-0">
+            <Text size="4" weight="medium" className="text-sm sm:text-base">
               Projects
             </Text>
           </Tabs.Trigger>
@@ -48,6 +50,4 @@ const HomeTabs = () => {
       </Tabs.Content>
     </Tabs.Root>
   );
-};
-
-export default HomeTabs;
+}
