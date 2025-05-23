@@ -1,9 +1,10 @@
-'use client';
+// components/ProjectsPage.jsx
+"use client";
 
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { projectData } from "./Project.Data";
-import { Container, Heading, Text } from "@radix-ui/themes";
+import { Heading, Text } from "@radix-ui/themes";
 import { motion } from "framer-motion";
 
 // same animation variants
@@ -18,9 +19,11 @@ const item = {
 
 export default function ProjectsPage() {
   return (
-    <Container size="4" style={{ margin: "0 auto", padding: "2rem 1rem" }}>
-      <Heading size="7" as="h2">Projects</Heading>
-      <Text size="2" color="gray">
+    <div className="w-full sm:max-w-7xl mx-auto px-2 sm:px-6 py-8 sm:py-12">
+      <Heading size="7" as="h2" className="mb-4">
+        Projects
+      </Heading>
+      <Text size="2" color="gray" className="mb-6">
         A selection of my work showcasing key technologies and outcomes.
       </Text>
 
@@ -42,6 +45,6 @@ export default function ProjectsPage() {
           ))}
         </div>
       </motion.div>
-    </Container>
+    </div>
   );
 }

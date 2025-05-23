@@ -1,47 +1,39 @@
+// components/EducationCard.jsx
+"use client";
+
 import React from "react";
 import { Card, Flex, Text, Heading } from "@radix-ui/themes";
 import { Icon } from "@iconify/react";
 
-const EducationCard = ({
+export default function EducationCard({
   institution,
   degree,
   duration,
   highlights,
   imageSrc,
-  className,
-}) => {
+  className = "",
+}) {
   return (
     <Card
       size="4"
-      className={`h-full flex flex-col ${className || ""}`}
-      style={{
-        width: "100%",
-        maxWidth: "1000px",
-        margin: "0 auto 1rem",
-        padding: "1.5rem",
-      }}
+      className={`
+        w-full            /* full width of parent */
+        mb-6              /* spacing between cards */
+        p-4 sm:p-6        /* responsive padding */
+        h-full flex flex-col
+        ${className}
+      `}
     >
       <Flex direction="column" gap="4">
         {/* Image */}
         {imageSrc && (
-          <div
-            style={{
-              aspectRatio: "2.13 / 1",
-              width: "100%",
-              overflow: "hidden",
-              borderRadius: "var(--radius-2)",
-            }}
-          >
+          <div className="w-full aspect-[2.13/1] overflow-hidden rounded-[var(--radius-2)]">
             <img
               src={imageSrc}
               alt={`${institution} preview`}
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
+              className="w-full h-full object-cover"
             />
           </div>
         )}
@@ -55,18 +47,10 @@ const EducationCard = ({
         {/* Highlights */}
         <Flex direction="column" gap="2">
           <Text color="gray">Program Highlights:</Text>
-          <ul
-            style={{
-              listStyleType: "disc",       // show real bullets
-              listStylePosition: "outside", // proper bullet spacing
-              paddingLeft: "1.5rem",        // better indent
-              color: "var(--gray-a11)",
-              fontSize: "0.9rem",
-            }}
-          >
-            {highlights.map((highlight, idx) => (
-              <li key={idx} style={{ marginBottom: "0.5rem" }}>
-                {highlight}
+          <ul className="list-disc list-outside pl-5 text-[var(--gray-a11)] text-[0.9rem] space-y-2">
+            {highlights.map((hl, i) => (
+              <li key={i}>
+                <Text as="span">{hl}</Text>
               </li>
             ))}
           </ul>
@@ -74,6 +58,4 @@ const EducationCard = ({
       </Flex>
     </Card>
   );
-};
-
-export default EducationCard;
+}

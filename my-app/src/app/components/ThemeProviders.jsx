@@ -1,8 +1,8 @@
 // components/ThemeProviders.jsx
 "use client";
 
-import React from "react";
 import { ThemeProvider } from "next-themes";
+import React from "react";
 
 export default function ThemeProviders({ children }) {
   return (
@@ -11,6 +11,7 @@ export default function ThemeProviders({ children }) {
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
+      enableColorScheme={false}    // ← turn off <html style="color-scheme:...">
     >
       {children}
     </ThemeProvider>
