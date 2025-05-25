@@ -5,7 +5,7 @@
 :root {
   /* brand colors you can reference in CSS or via Tailwind custom colors */
   --brand:       #ffffff;
-  --brand-hover: #1e3a8a;
+  --brand-hover: #9bb0eb;
   
   
 }
@@ -35,4 +35,22 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
+}
+
+.project-card-forced-bg {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* --- Force card white in light mode, dark in dark mode --- */
+.force-white-bg {
+  background: white !important;
+  background-color: white !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .force-white-bg {
+    background: #18181b !important;      /* dark: matches Tailwind's gray-900 */
+    background-color: #18181b !important;
+  }
 }
