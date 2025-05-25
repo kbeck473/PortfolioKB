@@ -17,11 +17,12 @@ export default function ProjectCard({
       className={`
         w-full max-w-2xl mx-auto mb-8
         rounded-2xl shadow-lg overflow-hidden
-        transition-colors duration-300
+        transition-colors transition-transform duration-300
+        hover:scale-[1.015] hover:shadow-2xl
         ${className}
       `}
       style={{
-        background: "var(--color-panel)", // Use Radix theme panel color
+        background: "var(--color-panel)",
       }}
     >
       <div className="w-full h-60 overflow-hidden">
@@ -75,10 +76,11 @@ export default function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
             className="
-              inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900
-              text-blue-700 dark:text-blue-300 px-4 py-2 rounded-md font-semibold
-              hover:bg-blue-200 dark:hover:bg-blue-800 transition
-              text-base shadow
+              inline-flex items-center gap-2 px-6 py-3 bg-blue-500
+              !text-white hover:!text-white focus:!text-white active:!text-white visited:!text-white
+              font-semibold rounded-lg shadow-md transition-colors duration-150
+              hover:bg-blue-400 focus-visible:outline-none focus-visible:ring-2
+              focus-visible:ring-blue-300 active:bg-blue-600
             "
           >
             <Icon icon="mdi:github" width={22} height={22} />
@@ -89,4 +91,3 @@ export default function ProjectCard({
     </div>
   );
 }
- 

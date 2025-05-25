@@ -2,15 +2,17 @@ export const projectData = [
   {
     title: "AR+AI CartOptics",
     description:
-      "An AR grocery assistant built with Unity and Snapdragon Spaces that uses YOLOv8 via Sentis to recognize products in real time. It overlays price, nutritional facts, and allergen information using generative AI, and lets users add items to a persistent AR shopping cart for a seamless, hands-free experience.",
+      "An AR grocery assistant built with Unity and Snapdragon Spaces that uses YOLOv8 via Sentis to recognize products in real time. It overlays price, nutritional facts, and allergen information using generative AI, and lets users add items to a persistent AR shopping cart.",
     imageSrc: "/images/CartOptics.jpg",
     githubUrl: "https://github.com/kbeck473/CartOptics",
     technologies: [
       { name: "Unity", iconSrc: "mdi:unity" },
       { name: "C#", iconSrc: "devicon:csharp" },
-      { name: "Snapdragon Spaces", iconSrc: "simple-icons:snapdragon", sizeMultiplier: 0.9 },
-      { name: "ONNX", iconSrc: "simple-icons:onnx", sizeMultiplier: 0.8 },
-      { name: "GCP", iconSrc: "material-icon-theme:gcp", sizeMultiplier: 1 },
+      { name: "Snapdragon Spaces", iconSrc: "simple-icons:qualcomm" },
+      { name: "YOLOv8", iconSrc: "simple-icons:yolo" },
+      { name: "ONNX", iconSrc: "simple-icons:onnx" },
+      { name: "Google Cloud Platform", iconSrc: "logos:google-cloud" },
+      { name: "Generative AI", iconSrc: "mdi:robot-excited-outline" },
     ],
   },
   {
@@ -23,7 +25,10 @@ export const projectData = [
       { name: "React", iconSrc: "logos:react" },
       { name: "Next.js", iconSrc: "logos:nextjs-icon" },
       { name: "Tailwind CSS", iconSrc: "logos:tailwindcss-icon" },
+      { name: "Radix UI", iconSrc: "simple-icons:radixui" },
       { name: "Framer Motion", iconSrc: "simple-icons:framer" },
+      { name: "JavaScript", iconSrc: "logos:javascript" }, // Added JavaScript
+      { name: "Vercel", iconSrc: "logos:vercel-icon" },
     ],
   },
   {
@@ -32,10 +37,12 @@ export const projectData = [
       "A custom 10\" server rack, 3D-printed to house a ProDesk 600 G2, Raspberry Pi 5, pfSense firewall, and a Netgear smart switch. Designed for compact virtualization (via Proxmox) and reliable local network services, with tailor-made brackets and mounts.",
     imageSrc: "/images/serverrack.png",
     technologies: [
-      { name: "Proxmox", iconSrc: "simple-icons:proxmox", sizeMultiplier: 0.9 },
-      { name: "pfSense", iconSrc: "simple-icons:pfsense", sizeMultiplier: 0.9 },
-      { name: "Raspberry Pi", iconSrc: "logos:raspberry-pi" },
+      { name: "Proxmox VE", iconSrc: "simple-icons:proxmox" },
+      { name: "pfSense", iconSrc: "simple-icons:pfsense" },
       { name: "3D Printing", iconSrc: "mdi:printer-3d" },
+      { name: "Raspberry Pi", iconSrc: "logos:raspberry-pi" },
+      { name: "Docker", iconSrc: "logos:docker-icon" },
+      { name: "Linux", iconSrc: "logos:linux-tux" },
       { name: "Networking", iconSrc: "mdi:ethernet" },
     ],
   },
@@ -47,7 +54,9 @@ export const projectData = [
     githubUrl: "https://github.com/kbeck473/CSUSMFitness",
     technologies: [
       { name: "Java", iconSrc: "logos:java" },
+      { name: "Swing", iconSrc: "mdi:alpha-s-circle" },
       { name: "MySQL", iconSrc: "logos:mysql" },
+      { name: "JDBC", iconSrc: "mdi:database-outline" },
     ],
   },
 ];

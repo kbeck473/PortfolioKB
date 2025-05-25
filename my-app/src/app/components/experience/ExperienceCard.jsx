@@ -22,6 +22,8 @@ export default function ExperienceCard({
         mb-4              /* spacing between cards */
         p-4 sm:p-6        /* responsive padding */
         h-full flex flex-col
+        transition-transform transition-shadow duration-300
+        hover:scale-[1.015] hover:shadow-2xl
         ${className}
       `}
     >
