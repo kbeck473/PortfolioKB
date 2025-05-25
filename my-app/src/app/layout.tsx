@@ -6,7 +6,7 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 
 import ThemeProviders from "./components/ThemeProviders.jsx";
-import { Theme, ThemePanel } from "@radix-ui/themes";
+import { Theme } from "@radix-ui/themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +44,6 @@ export default function RootLayout({
             radius="large"
           >
             {children}
-            <ThemePanel />        {/* floating light/dark toggle */}
           </Theme>
         </ThemeProviders>
       </body>

@@ -11,11 +11,20 @@ import ContactForm from './ContactForm';
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.3 } } };
 const item = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
+// Explicit white text on all states
+const buttonClass = `
+  inline-flex items-center gap-2 px-6 py-3 bg-blue-500
+  !text-white hover:!text-white focus:!text-white active:!text-white visited:!text-white
+  font-semibold rounded-lg shadow-md transition-colors duration-150
+  hover:bg-blue-400 focus-visible:outline-none focus-visible:ring-2
+  focus-visible:ring-blue-300 active:bg-blue-600
+`;
+
 export default function HeroSection() {
   return (
     <section
       className="relative min-h-[70vh] flex items-center justify-center px-6 py-8 overflow-hidden"
-      style={{ color: 'var(--gray12)' }} // default text color: dark in light, white in dark
+      style={{ color: 'var(--gray12)' }}
     >
       {/* Background video */}
       <video
@@ -64,14 +73,14 @@ export default function HeroSection() {
               wrapper="span"
               cursor
               repeat={Infinity}
-              className="text-white"   // force animated text to stay white
+              className="text-white"
             />
           </motion.h1>
 
           <motion.p
             variants={item}
             className="text-lg max-w-xl mx-auto lg:mx-0 font-bold"
-            style={{ color: 'var(--gray11)' }} // medium gray in light, light gray in dark
+            style={{ color: 'var(--gray11)' }}
           >
             I’m Kyle Beck—a Software Engineering graduate and IT professional.
             Welcome to my portfolio where I showcase AR/AI, full-stack dev, and more.
@@ -82,7 +91,7 @@ export default function HeroSection() {
             <a
               href="/Kyle_Beck_Resume.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:bg-blue-400"
+              className={buttonClass}
             >
               <Icon icon="mdi:download" className="w-5 h-5" />
               Download Resume
@@ -91,7 +100,7 @@ export default function HeroSection() {
             {/* Contact Me Modal */}
             <Dialog.Root>
               <Dialog.Trigger asChild>
-                <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition hover:bg-blue-400">
+                <button className={buttonClass}>
                   <Icon icon="mdi:email" className="w-5 h-5" />
                   Contact Me
                 </button>
