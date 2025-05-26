@@ -21,7 +21,7 @@ export const projectData = [
     subtitle: "Next.js Portfolio & Blog",
     description:
       "A responsive, modern portfolio built with Next.js, React, Tailwind CSS, and Framer Motion. Features dynamic project cards, smooth animations using framer motion, and a clean layout optimized for both desktop and mobile viewing.",
-    imageSrc: "/images/portfolio.png",
+    imageSrc: "/images/porti.png",
     githubUrl: "https://github.com/kbeck473/PortfolioKB",
     technologies: [
       { name: "React", iconSrc: "logos:react" },
