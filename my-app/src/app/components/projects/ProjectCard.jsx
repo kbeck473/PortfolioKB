@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 
 export default function ProjectCard({
   title,
+  subtitle,
   description,
   imageSrc,
   technologies,
@@ -33,14 +34,25 @@ export default function ProjectCard({
         />
       </div>
       <div className="p-7">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-2xl font-bold text-[var(--color-foreground)]">{title}</span>
-          {isNew && (
-            <span className="bg-pink-500 text-white text-xs font-bold rounded-full px-2 py-0.5">
-              NEW
-            </span>
+        {/* Title and Subtitle */}
+        <div className="mb-2">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl font-bold text-[var(--color-foreground)]">{title}</span>
+            {isNew && (
+              <span className="bg-pink-500 text-white text-xs font-bold rounded-full px-2 py-0.5">
+                NEW
+              </span>
+            )}
+          </div>
+          {subtitle && (
+            <div className="mt-1 text-left">
+              <span className="text-base text-blue-500 opacity-80 block">
+                {subtitle}
+              </span>
+            </div>
           )}
         </div>
+
         <p className="text-base text-[var(--color-foreground)] opacity-80 mb-4">{description}</p>
 
         {/* Tags */}

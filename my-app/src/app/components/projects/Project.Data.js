@@ -1,8 +1,9 @@
 export const projectData = [
   {
     title: "AR+AI CartOptics",
+    subtitle: "AR shoping tool Gen AI",
     description:
-      "An AR grocery assistant built with Unity and Snapdragon Spaces that uses YOLOv8 via Sentis to recognize products in real time. It overlays price, nutritional facts, and allergen information using generative AI, and lets users add items to a persistent AR shopping cart.",
+      "An AR grocery assistant built with Unity and Snapdragon Spaces, developed in partnership with Qualcomm as student developers. Uses YOLOv8 for real-time product recognition, overlaying price, nutritional facts, and allergen details with generative AI on the cloud.",
     imageSrc: "/images/CartOptics.jpg",
     githubUrl: "https://github.com/kbeck473/CartOptics",
     technologies: [
@@ -17,22 +18,24 @@ export const projectData = [
   },
   {
     title: "Portfolio Website",
+    subtitle: "Next.js Portfolio & Blog",
     description:
-      "A responsive, modern portfolio built with Next.js, React, Tailwind CSS, and Framer Motion. Features dynamic project cards, smooth animations, and a clean layout optimized for both desktop and mobile viewing.",
+      "A responsive, modern portfolio built with Next.js, React, Tailwind CSS, and Framer Motion. Features dynamic project cards, smooth animations using framer motion, and a clean layout optimized for both desktop and mobile viewing.",
     imageSrc: "/images/portfolio.png",
-    githubUrl: "https://github.com/yourusername/portfolio",
+    githubUrl: "https://github.com/kbeck473/PortfolioKB",
     technologies: [
       { name: "React", iconSrc: "logos:react" },
       { name: "Next.js", iconSrc: "logos:nextjs-icon" },
       { name: "Tailwind CSS", iconSrc: "logos:tailwindcss-icon" },
       { name: "Radix UI", iconSrc: "simple-icons:radixui" },
       { name: "Framer Motion", iconSrc: "simple-icons:framer" },
-      { name: "JavaScript", iconSrc: "logos:javascript" }, // Added JavaScript
+      { name: "JavaScript", iconSrc: "logos:javascript" },
       { name: "Vercel", iconSrc: "logos:vercel-icon" },
     ],
   },
   {
     title: "3D-Printed Home Server Rack",
+    subtitle: "Custom Rackmount Lab Build",
     description:
       "A custom 10\" server rack, 3D-printed to house a ProDesk 600 G2, Raspberry Pi 5, pfSense firewall, and a Netgear smart switch. Designed for compact virtualization (via Proxmox) and reliable local network services, with tailor-made brackets and mounts.",
     imageSrc: "/images/serverrack.png",
@@ -47,7 +50,8 @@ export const projectData = [
     ],
   },
   {
-    title: "CSUSM Fitness – Membership Management",
+    title: "CSUSM Fitness",
+    subtitle: "Java Gym Admin Desktop App",
     description:
       "A Java desktop application for fitness facility administrators. Manage member check-ins/outs, view status, edit personal details, and monitor real-time occupancy. Integrates MySQL for robust data storage and retrieval.",
     imageSrc: "/images/csusmfitness.png",

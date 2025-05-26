@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 "use client";
 
 import React from "react";
@@ -19,16 +18,16 @@ export default function Navbar() {
           href="/"
           className="
             text-lg font-bold tracking-tight
-            text-[var(--accent-9)]          /* solid accent base */
-            hover:text-[var(--accent-7)]     /* lighter on hover */
+            text-[var(--accent-9)]
+            hover:text-[var(--accent-7)]
             transition-colors duration-200
           "
         >
           kylebeck.dev
         </a>
 
-        {/* Social links */}
-        <NavigationMenu.List className="flex gap-6 items-center">
+        {/* Social links - card-style buttons, text color stays constant */}
+        <NavigationMenu.List className="flex gap-4 items-center">
           {[
             {
               href: "https://github.com/kbeck473",
@@ -47,14 +46,23 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  flex items-center gap-3
-                  text-[var(--accent-9)]
-                  hover:text-[var(--accent-7)]
-                  transition-colors duration-200
+                  flex items-center gap-2 px-4 py-2
+                  rounded-xl shadow-sm
+                  bg-[var(--color-panel)]
+                  text-[var(--accent-9)] font-semibold
+                  hover:bg-[var(--accent-5)]
+                  hover:scale-105
+                  focus:outline-none focus:ring-2 focus:ring-[var(--accent-6)]
+                  transition-all duration-200
+                  active:scale-100
+                  border border-transparent
                 "
+                style={{
+                  boxShadow: "0 2px 8px 0 rgba(30,41,59,.07)",
+                }}
               >
-                <Icon size={24} />
-                <span className="text-lg">{label}</span>
+                <Icon size={22} />
+                <span className="text-base">{label}</span>
               </NavigationMenu.Link>
             </NavigationMenu.Item>
           ))}
