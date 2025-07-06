@@ -89,7 +89,7 @@ export default function HeroSection() {
           <motion.div variants={item} className="flex justify-center lg:justify-start gap-4">
             {/* Download Resume */}
             <a
-              href="/Kyle_Beck_6-11-25.pdf"
+              href="/Kyle_Beck_7_6_25.pdf"
               download
               className={buttonClass}
             >
