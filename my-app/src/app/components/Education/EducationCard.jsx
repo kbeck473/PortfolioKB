@@ -2,7 +2,6 @@
 "use client";
 
 import React from "react";
-import { Card, Flex, Text, Heading } from "@radix-ui/themes";
 
 export default function EducationCard({
   institution,
@@ -12,42 +11,75 @@ export default function EducationCard({
   imageSrc,
   className = "",
 }) {
+  const isAWS = institution.toLowerCase().includes("amazon web services");
+
   return (
-    <Card
-      size="4"
+    <div
       className={`
-        w-full mb-6 rounded-2xl overflow-hidden shadow flex flex-col h-full ${className}
+        w-full max-w-2xl mx-auto mb-8
+        rounded-2xl shadow-lg overflow-hidden
+        transition-transform duration-300
+        hover:scale-[1.015] hover:shadow-2xl
+        ${className}
       `}
-      style={{ padding: 0 }}
+      style={{
+        background: "var(--color-panel)",
+      }}
     >
-      {/* Edge-to-edge image */}
+      {/* Image section */}
       {imageSrc && (
-        <div className="w-full aspect-[2.13/1] overflow-hidden">
-          <img
-            src={imageSrc}
-            alt={`${institution} preview`}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
+        isAWS ? (
+          // Special layout for AWS badge
+          <div className="w-full h-72 bg-white flex items-center justify-center p-10">
+            <img
+              src={imageSrc}
+              alt={`${institution} preview`}
+              className="max-h-full max-w-full object-contain"
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          // Default banner-style layout for schools, etc.
+          <div className="w-full h-60 overflow-hidden">
+            <img
+              src={imageSrc}
+              alt={`${institution} preview`}
+              className="w-full h-full object-cover rounded-t-2xl"
+              loading="lazy"
+            />
+          </div>
+        )
       )}
-      {/* Card content with padding */}
-      <div className="flex-1 flex flex-col p-4 sm:p-6">
-        <Heading size="5">{institution}</Heading>
-        <Text color="gray">
-          {degree} • {duration}
-        </Text>
-        <Flex direction="column" gap="2" className="mt-3">
-          <Text color="gray">Program Highlights:</Text>
-          <ul className="list-disc list-outside pl-5 text-[var(--gray-a11)] text-[0.9rem] space-y-2">
-            {highlights.map((hl, i) => (
-              <li key={i}>
-                <Text as="span">{hl}</Text>
-              </li>
-            ))}
-          </ul>
-        </Flex>
+
+      {/* Content section */}
+      <div className="p-7">
+        <div className="mb-2">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl font-bold text-[var(--color-foreground)]">
+              {institution}
+            </span>
+          </div>
+          <div className="mt-1 text-left">
+            <span className="text-base text-blue-500 opacity-80 block">
+              {degree} • {duration}
+            </span>
+          </div>
+        </div>
+
+        {/* Highlights */}
+        {highlights && highlights.length > 0 && (
+          <div className="mt-4">
+            <span className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2 block">
+              Program Highlights:
+            </span>
+            <ul className="list-disc pl-5 space-y-2 text-[0.92rem] text-[var(--gray-a11)]">
+              {highlights.map((hl, i) => (
+                <li key={i}>{hl}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
-    </Card>
+    </div>
   );
 }
