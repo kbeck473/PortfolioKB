@@ -25,7 +25,8 @@ export const experienceData = [
         "Acted as Tier 2 escalation point for Level 1 technicians, routing more complex issues to Tier 3 staff and external groups.",
         "Logged, triaged, and escalated IT incidents via HelpSpot ticketing tool, ensuring prompt resolution and high customer satisfaction.",
         "Supervised student staff in troubleshooting techniques, customer-service standards, and technical procedures.",
-        "Imaged and redeployed computers via PXE boot after employee separations."
+        "Imaged and redeployed computers via PXE boot after employee separations.",
+        "Developed and maintained internal knowledge base articles and standard operating procedures."
       ],
       icon: "mdi:desktop-classic",
       link: null
