@@ -1,5 +1,21 @@
 export const experienceData = [
     {
+      title: "Help Desk Technician ",
+      company: "SIATech",
+      duration: "Sept 2025 – Present",
+      // keep this as an array of strings
+      description: [
+        "Act as the first point of contact for technical support across all 14 sites and central office.",
+        "Deploy and package applications via Intune for staff and admin groups.",
+        "Manage users and RBAC for resources within Entra ID, Active Directory and other systems.",
+        "Led the organization wide Windows 11 migration and enrolled all staff devices into Intune for enterprise management and deployments.",
+        "Oversee repair, replacement, and end of life disposal of assets in compliance with data‑destruction policies."
+        "Coordinate with vendors and internal teams to procure new hardware and secure competitive pricing on equipment."
+      ],
+      icon: "mdi:desktop-classic",
+      link: null
+    },
+    {
       title: "Help Desk Floor Coordinator",
       company: "IITS, Cal State University San Marcos",
       duration: "Mar 2024 – Present",
