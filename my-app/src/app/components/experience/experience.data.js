@@ -9,7 +9,7 @@ export const experienceData = [
         "Deploy and package applications via Intune for staff and admin groups.",
         "Manage users and RBAC for resources within Entra ID, Active Directory and other systems.",
         "Led the organization wide Windows 11 migration and enrolled all staff devices into Intune for enterprise management and deployments.",
-        "Oversee repair, replacement, and end of life disposal of assets in compliance with data‑destruction policies."
+        "Oversee repair, replacement, and end of life disposal of assets in compliance with data‑destruction policies.",
         "Coordinate with vendors and internal teams to procure new hardware and secure competitive pricing on equipment."
       ],
       icon: "mdi:desktop-classic",
