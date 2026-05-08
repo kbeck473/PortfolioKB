@@ -37,7 +37,7 @@ export const projectData = [
     title: "3D-Printed Home Server Rack",
     subtitle: "Custom Rackmount Lab Build",
     description:
-      "A custom 10\" server rack, 3D-printed to house a ProDesk 600 G2, Raspberry Pi 5, pfSense firewall, and a Netgear smart switch. Designed for compact virtualization (via Proxmox) and reliable local network services, with tailor-made brackets and mounts.",
+      "Designed and deployed a rack-mounted home lab environment to simulate enterprise IT infrastructure and system administration workflows. Built a virtualized self-hosting platform using Proxmox, integrated redundant network storage with TrueNAS, and deployed a K3S Kubernetes cluster for containerized applications and service orchestration. Managed services through Rancher, implemented monitoring and game server hosting, and secured the environment with pfSense firewall segmentation and VPN-based remote access.",
     imageSrc: "/images/serverrack.png",
     technologies: [
       { name: "Proxmox VE", iconSrc: "simple-icons:proxmox" },
